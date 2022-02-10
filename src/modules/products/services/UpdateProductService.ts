@@ -9,11 +9,7 @@ export default class UpdateProductService {
     if (typeof (await repos.achaUm(ide)) === "undefined") {
       throw new AppError("não exixte produto com esse id");
     } else {
-      if (await repos.proTemNome(data.nome)) {
-        throw new AppError("esse nome ja está em uso por outro produto");
-      } else {
-        return await repos.update(ide, data);
-      }
+      return await repos.update(ide, data);
     }
   }
 }
