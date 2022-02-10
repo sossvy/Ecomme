@@ -1,0 +1,10 @@
+import { Router } from "express";
+import OrderProduct from "../../typeorm/entities/OrderProduct";
+import OrderController from "../controllers/OrderController";
+const routes = Router();
+routes.post("/", OrderController.Create);
+routes.get("/:id", OrderController.Read);
+routes.get("/", OrderController.list);
+routes.get("/doCliente/:id", OrderController.listFromClient);
+routes.put("/mudaStatus/:id", OrderController.UpdateState);
+export default routes;

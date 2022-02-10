@@ -1,0 +1,11 @@
+import { Router } from "express";
+import clientsRoutes from "../../../../modules/clients/infra/http/routes/clients.routes";
+import categoriesRoutes from "../../../../modules/categories/infra/http/routes/categories.routes";
+import productsRoutes from "../../../../modules/products/infra/http/routes/products.routes";
+import orderRoutes from "../../../../modules/orders/infra/http/routes/Order.routes";
+const routes = Router();
+routes.use("/clientes", clientsRoutes);
+routes.use("/Categories", categoriesRoutes);
+routes.use("/Products", productsRoutes);
+routes.use("/Orders", orderRoutes);
+export default routes;
